@@ -1,28 +1,35 @@
 <template>
+  <div>
+    <Header></Header>
+
   <section class="container">
     <div>
-      <app-logo/>
 
+    <LeftMenu></LeftMenu>
     </div>
+    <Table></Table>
   </section>
+  </div>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
+import LeftMenu from '../components/LeftMenu.vue'
+import Header from '../components/Header'
+import Table from '../components/Table'
 export default {
   components: {
-    AppLogo
+      Header,
+      Table,
+    LeftMenu
   }
 }
 </script>
 
 <style>
 .container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: row;
   text-align: center;
 }
 
