@@ -6,7 +6,7 @@
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <div class="nav-right" v-bind:style='{ display: menuActiv()}'>
-                    <b-nav-item href="#" @click='menu'>Syndex</b-nav-item>
+                    <b-nav-item href="#"  @click='menu'>syndex</b-nav-item>
                     </div>
                     <img class="nav-img" src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/933301/icon-169_rxh3o1.png">
                     <span id="text-point">{{currency}}</span>
@@ -31,7 +31,7 @@
                     <img  class="nav-img" src="https://image.flaticon.com/icons/png/512/61/61073.png">
                         </div>
                         <div>
-                    <img  class="nav-img" src="https://image.flaticon.com/icons/svg/149/149295.svg">
+                    <img  class="nav-img" src="https://image.flaticon.com/icons/svg/149/149295.svg" >
                         </div>
                         <b-nav-item href="#"><img  class="nav-question-img" src="https://cdn1.iconfinder.com/data/icons/seo-vol-2-7/64/43-512.png">
                         </b-nav-item>
@@ -86,8 +86,12 @@
              console.log(this.$store.state.leftMenu, "dsf");
             },
             menuActiv() {
-               if (this.$store.state.leftMenu === false) {return 'none'}
-            else {return ''}
+               if (this.$store.state.leftMenu === false) {
+                   this.$store.state.leftBar="";
+                   console.log(this.$store.state.leftBar,"bar");
+                   return 'none'}
+            else {
+                   return ''}
        }
      }
     }
@@ -110,11 +114,10 @@
         color: blue;
     }
     #text-lang{
-
         font-style: normal;
         font-weight: bold;
         color: blue;
-        margin-left: 8px;
+        margin-left: 20px;
     }
     .nav-question-img{
         margin-bottom:1px;
@@ -129,8 +132,11 @@
         height: 30px;
     }
     .nav-right{
+        font-size:25px ;
+        font-weight: bold;
         height:100%;
         width: 260px;
+        color: black;
         background-color:rgb(240, 244, 251);
 
 
