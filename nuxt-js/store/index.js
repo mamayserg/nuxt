@@ -11,9 +11,13 @@ const store = () => new Vuex.Store({
         lang: {
             rus: 'РУС',
             eng: 'ENG'
-        }
+        },
+        leftBar:''
     },
     mutations: {
+        changeLeftSideBar(state,prop){
+            state.leftBar = prop;
+        },
         changeLanguage (state,prop) {
 
             if(prop === "rus"){
