@@ -63,7 +63,7 @@ margin-right: 10px;
     height: 100%;
     width: 280px;
 
-      transition-duration: 2s;
+      transition-duration: 0.5s;
   }
 
 </style>

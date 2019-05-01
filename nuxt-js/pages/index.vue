@@ -2,6 +2,7 @@
   <div>
     <Header></Header>
   <div class="box">
+    <ButtonMenu class="visibility-button"></ButtonMenu>
     <div v-if="this.$store.state.leftMenu">
       <LeftMenu ></LeftMenu>
     </div>
@@ -24,13 +25,15 @@ import Header from '../components/Header'
 import Table from '../components/Table'
 import Price from '../components/Price'
 import Merchant from '../components/Merchant'
+import  ButtonMenu from '../components/ButtonMenu'
 export default {
   components: {
       Header,
       Table,
     LeftMenu,
       Price,
-      Merchant
+      Merchant,
+      ButtonMenu
   },
     computed:{
       leftSideBar(){
@@ -78,7 +81,20 @@ display: flex;
   background-size: 100%; /* Современные браузеры */
 
 }
-@media screen and (max-width: 900px){
+  .visibility-button{
+    display: none;
+  }
+  .visibility-but-header{
+    display: inline;
+  }
+@media screen and (max-width: 996px){
+  .visibility-but-header{
+    display: none;
+  }
+  .visibility-button{
+    display: inline;
+
+  }
   .nav-right{
     width: 100%;
     text-align: center;
