@@ -1,12 +1,15 @@
 <template>
         <div>
-        <b-navbar toggleable="lg" type="light" variant="white">
+        <b-navbar toggleable="lg" type="light" variant="white" id="head">
             <b-navbar-brand href="#" v-if="!this.$store.state.leftMenu"><i class="material-icons" @click='menu'>menu</i></b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <div class="nav-right" v-bind:style='{ display: menuActiv()}'>
-                    <b-nav-item href="#"  @click='menu'>syndex</b-nav-item>
+                    <b-nav-item href="#"  @click='menu'>
+                        <img  class="head-img1" src="https://cdn3.iconfinder.com/data/icons/arrows-85/24/Arrow-256.png">
+                        <img  class="head-img2" src="https://cdn1.iconfinder.com/data/icons/basic-ui-icon-rounded-colored/512/icon-10-256.png">
+                        syndex</b-nav-item>
                     </div>
                     <img class="nav-img" src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/933301/icon-169_rxh3o1.png">
                     <span id="text-point">{{currency}}</span>
@@ -87,7 +90,7 @@
             },
             menuActiv() {
                if (this.$store.state.leftMenu === false) {
-                   this.$store.state.leftBar="";
+                   this.$store.state.leftBar=0;
                    console.log(this.$store.state.leftBar,"bar");
                    return 'none'}
             else {
@@ -98,6 +101,23 @@
 
 </script>
 <style>
+    #head{
+        height: 70px;
+    }
+
+    .head-img1{
+         margin-left:3px ;
+         margin-bottom: 8px;
+         height: 20px;
+         width: 15px;
+     }
+    .head-img2{
+        margin-right:1px ;
+        margin-top: 8px;
+        height: 22px;
+        width: 15px;
+    }
+
     .border-2{
         padding-right:20px ;
         border-right:2px solid lightgray;
@@ -108,7 +128,7 @@
         border-left:1px solid lightgray;
     }
     #text-point{
-        padding-top: 6px;
+        padding-top: 10px;
         font-style: normal;
         font-weight: bold;
         color: blue;
@@ -132,7 +152,8 @@
         height: 30px;
     }
     .nav-right{
-        font-size:25px ;
+        text-align: left;
+        font-size:30px ;
         font-weight: bold;
         height:100%;
         width: 260px;
